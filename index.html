@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>rxce.in/#/win</title
+     <script src="https://kit.fontawesome.com/44a79670a2.js" crossorigin="anonymous"></script>
+    <style>
+    *{
+      padding: 0px;
+      margin:0px;
+    }
+      #green{
+        background-color:#28881E;
+        color:white;
+        padding:30px;
+      }
+      button{
+        padding:8px;
+        border:none;
+        font-weight: bold;
+        outline: none;
+      }
+      #recharge{
+        background-color: #2887D3;
+        margin-right:10px;
+        color:white;
+      }
+     
+      #types{
+        display:flex;
+        justify-content: space-around;
+      //  border: 2px solid red;
+      border-bottom:1px solid #E6ECF2;
+      }
+      .type{
+      //  border:1px solid black;
+        padding:13px;
+      }
+      #info{
+        display:flex;
+        justify-content: space-between;
+        margin:10px;
+      }
+      .timer{
+        margin-left:5px;
+        font-size:20px;
+        background-color:#EAF6FF;
+        padding:5px;
+       border-radius:5px;
+      }
+      #counter{
+        font-size: 25px;
+      }
+     #colors{
+       display:flex;
+       justify-content:space-around;
+       //border: 1px solid green;
+     }
+     .color{
+       padding:10px;
+       color:white;
+       border-radius: 1px;
+       box-shadow:0px 1px 5px black;
+     }
+     #col1{
+       background-color:#41D770;
+     }
+        #col2{
+       background-color:#502CBF;
+     }
+        #col3{
+        background-color:#FF0808;
+        }
+        #numbers{
+          display:grid;
+          grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+          grid-gap:20px;
+          margin:10px 20px;
+        }
+        .num{
+          background-color: #08A0FF;
+          color:white;
+          padding: 10px;
+          text-align: center;
+          border-radius: 1px;
+          box-shadow:0px 1px 5px black;
+        }
+        #present_type{
+          text-align: center;
+          border-bottom:3px solid green;
+          padding-bottom: 10px;
+        }
+        table,tr,td,th{
+          padding:20px;
+          border-bottom:1px solid #B6BFC5;
+          border-collapse: collapse;
+          font-size: 12px;
+        }
+        td,th{
+          padding-left:23px;
+          width:50px;
+          text-align: center;
+        }
+        th{
+          color:#B6BFC5;
+        }
+        #result{
+          width:15px;
+          height:15px;
+          background-color: red;
+          border-radius: 50%;
+        }
+           #result1{
+          width:15px;
+          height:15px;
+         // background-color: red;
+          border-radius: 50%;
+        }
+        .type:hover{
+          border-bottom:1px solid green;
+          
+        }
+        #bet{
+          position:absolute;
+          top:150px;
+          left:20px;
+         // border:1px solid black;
+          height:430px;
+          width:350px;
+          background-color:white;
+          box-shadow:0px 3px 2px #9FA1A6;
+          visibility:hidden;
+        }
+        h3{
+          padding:20px;
+          color:white;
+          background-color: #59D37B;
+        }
+        #content{
+          margin:20px;
+        }
+        #denomination{
+          margin-top: 20px;
+          box-shadow:0px 3px 2px #9FA1A6;
+          
+          width:218px;
+        }
+        .money{
+         // margin-right: 10px;
+          display:inline-block;
+          padding:10px;
+        }
+        .money:hover{
+          background-color: #9698A8;
+        }
+        #increment,#decrement{
+          width:60px;
+         // padding: 10px;
+          font-size: 25px;
+          background-color:#F5F5FD ;
+          box-shadow:0px 3px 2px #9FA1A6;;
+        }
+        #increment:hover,#decrement:hover{
+          background-color: #A8AAB1;
+        }
+        #increment{
+          margin-left: 80px;
+        }
+        #decrement{
+          margin-right: 80px;
+        }
+        #options{
+          text-align:end;
+        }
+        .option{
+          margin-left:30px;
+        }
+        #trade{
+          //border:1px solid green;
+          height:650px;
+          overflow-y: scroll;
+        }
+        #records{
+          margin:20px;
+        }
+        #announce{
+          padding:20px 20px 20px 50px;
+          background-color: #039BE5;
+          color:white;
+        }
+        .gap{
+          padding:15px;
+          margin-left:25px;
+          font-size:13px;
+          //padding-bottom:20px;
+          display:inline-block;
+        }
+        #heads{
+          border-bottom:1px solid black;
+        }
+        #load-icon{
+          margin-left:140px;
+        }
+        #record{
+          display:inline-block;
+          width:200px;
+          margin:10px;
+        }
+        .ans{
+          display:inline-block;
+          width:150px;
+          margin:5px;
+        }
+        .details{
+          margin:10px;
+          font-size: 13px;
+          max-height: 0px;
+          overflow: hidden;
+          transition:max-height 400ms ease-out;
+        }
+        i{
+          transition: 300ms ease-out;
+        }
+    </style>
+</head>
+
+<body>
+  <div id="announce">
+    Recently received feedback from many users. There are many criminals impersonating Rxce staff and official websites to defraud user account information and steal user account balances. Hereby remind users to strengthen their awareness of prevention. We will not use any account information that asks users in any form. Please do not disclose your account information to anyone. In this way, account security is guaranteed. I wish all users a happy life, thank you! Important note: In order to facilitate each user's withdrawal, our withdrawal time is 10:00-24:00. No withdrawal service will be provided at other times. Everyone will inform each other and wish all users a happy life!
+  </div>
+<div id="green">
+ <p> Available balance : ₹ <span id="amount">200040.00</span></p><br>
+  <p>
+    <button id="recharge">Recharge</button>
+    <button>Read Rule</button>
+    <span id="load-icon"><i class="fas fa-sync-alt"></i></span>
+    </p>
+</div>
+<div id="game">
+  <div id="types">
+    
+  <div class="type">Parity</div>
+  <div class="type">Sapre</div>
+  <div class="type">Becone</div>
+  <div class="type">Emred</div>
+  </div>
+  <div id="info">
+  <div id="info1">
+    <p><i class="fas fa-trophy"></i> Period</p><br>
+  <p id="number">202111061345</p>
+  </div>
+    <div id="info2">
+    <p>Count Down</p><br>
+  <p id="counter">
+    <span class="timer" id="m1">0</span>
+       <span class="timer" id="m2">2</span> :
+          <span class="timer" id="s1">5</span>
+             <span class="timer" id="s2">9</span>
+  </p>
+  </div>
+  </div>
+  <br>
+  <div id="colors">
+    <div onclick="appear(this)" id="col1" class="color">Join Green</div>
+       <div onclick="appear(this)" id="col2" class="color">Join Violet</div>
+          <div onclick="appear(this)" id="col3" class="color">Join Red</div>
+  </div>
+  <br>
+  <div id="numbers">
+     <div class="num">0</div>
+    <div class="num">1</div>
+      <div class="num">2</div>
+      <div class="num">3</div>
+      <div class="num">4</div>
+     <div class="num">5</div>
+    <div class="num">6</div>
+      <div class="num">7</div>
+        <div class="num">8</div>
+          <div class="num">9</div>
+  </div>
+</div>
+<br>
+<p id="present_type">Parity Record</p>
+
+<div id="bet">
+  <h3 id="select_color">Join Green</h3>
+  <div id="content">
+    Contract Money
+    <div id="denomination">
+      <span onclick="denomination(this)" class="money" id="10">10</span>
+      <span onclick="denomination(this)" class="money" id="100">100</span>
+      <span onclick="denomination(this)" class="money" id="1000">1000</span>
+      <span onclick="denomination(this)" class="money" id="10000">10000</span>
+    </div>
+    <br>
+    Number<br><br>
+    <div id="multiplier">
+      <button onclick="minus()" id="decrement">-</button>
+      <span id="value">1</span>
+      <button onclick="plus()" id="increment">+</button>
+    </div>
+    <br><br>
+    <p id="total">Total contract money is 10</p>
+    <br><br>
+    <p >I agree <span style="color:green">PRESALE RULE</span></p><br>
+    <div id="options"><span onclick="disappear()" class="option">CANCEL</span><span onclick="confirm()" style="color:green" class="option">CONFIRM</span></div>
+  </div>
+  
+</div>
+<br>
+ <div id="heads">
+    <span class="gap">Period</span>  <span class="gap">Price</span>    <span class="gap">Number</span>
+    <span class="gap">Result</span>
+
+  </div>
+<div id="trade">
+ 
+<table id="table">
+ 
+   <tr >
+    <td>20211107311</td>
+    <td>132326</td>
+    <td>6</td>
+    <td><div id="result">
+      
+    </div></td>
+  </tr>
+     <tr >
+    <td>20211107310</td>
+    <td>132342</td>
+    <td>2</td>
+    <td><div id="result">
+      
+    </div></td>
+  </tr>
+     <tr >
+    <td>20211107309</td>
+    <td>132354</td>
+    <td>4</td>
+    <td><div id="result">
+      
+    </div></td>
+  </tr>
+     <tr >
+    <td>20211107308</td>
+    <td>132352</td>
+    <td>2</td>
+    <td><div id="result">
+      
+    </div></td>
+  </tr>
+     <tr >
+    <td>20211107307</td>
+    <td>132336</td>
+    <td>6</td>
+    <td><div id="result">
+      
+    </div></td>
+  </tr>
+     <tr >
+    <td>20211107306</td>
+    <td>132338</td>
+    <td>8</td>
+    <td><div id="result">
+      
+    </div></td>
+  </tr>
+   </tr>
+     <tr >
+    <td>20211107305</td>
+    <td>132334</td>
+    <td>4</td>
+    <td><div id="result">
+      
+    </div></td>
+  </tr>
+   </tr>
+     <tr >
+    <td>20211107304</td>
+    <td>132352</td>
+    <td>2</td>
+    <td><div id="result">
+      
+    </div></td>
+  </tr>
+   </tr>
+     <tr >
+    <td>20211107303</td>
+    <td>132354</td>
+    <td>4</td>
+    <td><div id="result">
+      
+    </div></td>
+  </tr>
+   </tr>
+     <tr >
+    <td>20211107302</td>
+    <td>132348</td>
+    <td>8</td>
+    <td><div id="result">
+      
+    </div></td>
+  </tr>
+   </tr>
+     <tr >
+    <td>20211107301</td>
+    <td>132350</td>
+    <td>0</td>
+    <td><div id="result">
+      
+    </div></td>
+  </tr>
+</table>
+</div>
+
+<div style="padding:15px;text-align:center;border-top:1px solid black;border-bottom:1px solid black">
+  <p><i  class="far fa-list-alt"></i></p>
+  My Sapre Record</div>
+
+<div id="records">
+  <p onclick="slide(this,0)">20211107409 <span style="color:green" id="record">Success +19.60</span>
+  <i class="fas fa-chevron-down"></i>
+  </p>
+  <div class="details">
+    <h4 style="color:#0097A7">Period Detail</h4>
+   <p> <span class="ans">Period</span>20211107409</p>
+   <p><span class="ans">Contract Money  </span>10.00</p>
+   <p><span class="ans">Contract  Count</span>1</p>
+   <p> <span class="ans">Delivery </span>9.8</p>
+   <p><span class="ans">Fee</span>0.2</p>
+   <p> <span class="ans">Open Price </span>122473</p>
+   <p>  <span class="ans">Result</span>3 Green</p>
+   <p>  <span class="ans">Select</span>Green</p>
+   <p>  <span class="ans">Status</span>Success</p>
+   <p>  <span class="ans">Amount</span>+19.6</p>
+   <p> <span class="ans">Create Time </span>2021-10-28 11:30</p>
+  </div>
+  
+  <p onclick="slide(this,0)">20211107409 <span style="color:green" id="record">Success +19.60</span>
+  <i class="fas fa-chevron-down"></i>
+  </p>
+  <div class="details">
+    <h4 style="color:#0097A7">Period Detail</h4>
+   <p> <span class="ans">Period</span>20211107409</p>
+   <p><span class="ans">Contract Money  </span>10.00</p>
+   <p><span class="ans">Contract  Count</span>1</p>
+   <p> <span class="ans">Delivery </span>9.8</p>
+   <p><span class="ans">Fee</span>0.2</p>
+   <p> <span class="ans">Open Price </span>122473</p>
+   <p>  <span class="ans">Result</span>3 Green</p>
+   <p>  <span class="ans">Select</span>Green</p>
+   <p>  <span class="ans">Status</span>Success</p>
+   <p>  <span class="ans">Amount</span>+19.6</p>
+   <p> <span class="ans">Create Time </span>2021-10-28 11:30</p>
+  </div>
+  
+  
+  
+  <br>
+</div>
+
+
+
+<script type="text/javascript" charset="utf-8">
+let chose=-1;
+  let id=setInterval(run,1000);
+  let m2=0,s1=0;s2=9;
+  function run(){
+    let counter=document.getElementById("counter");
+    counter.innerHTML="<span class='timer'>0</span>"+
+    "<span class='timer' >"+m2+"</span> :"+
+    "<span class='timer' >"+s1+"</span>"+
+    "<span class='timer' >"+s2+"</span";
+   
+     if(s2 == 0){
+       if(s1 !=0){
+       s2=9;
+       s1--;
+       }
+       else{
+         if(m2 != 0){
+         m2--;
+         s2=9;
+         s1=0;
+         }
+         else{
+           generate();
+           m2=0;
+           s1=0;
+           s2=9;
+         }
+       }
+     }
+     else{
+       s2--;
+     }
+  }
+  
+  let denom=10;
+  let value=1;
+  let tip=410;
+  let status=0;
+  let price;
+  let key;
+  let color;
+  let select;
+  let col,icon;
+  let toggle=0;
+  let d;
+  let hour,minute;
+  function denomination(num){
+   let denos=document.getElementsByClassName("money");
+   for(i=0;i<denos.length;i++){
+     denos[i].style.backgroundColor="white";
+   }
+    num.style.backgroundColor="#9698A8";
+    denom=Number(num.id);
+    total.innerHTML="Total contract money is "+value*denom;
+  }
+  
+  function plus(){
+   let val_span=document.getElementById("value");
+   value=Number(val_span.innerHTML);
+   value++;
+   val_span.innerHTML=value;
+   let total=document.getElementById("total");
+   total.innerHTML="Total contract money is "+value*denom;
+  }
+  function minus(){
+   let val_span=document.getElementById("value");
+   value=Number(val_span.innerHTML);
+   if(value != 1){
+   value--;
+   val_span.innerHTML=value;
+   total.innerHTML="Total contract money is "+value*denom;
+   }
+  }
+  function appear(color){
+    let head=document.getElementById("select_color");
+    let bet = document.getElementById("bet");
+    
+    if(color.id == "col1"){
+      head.style.backgroundColor="#41D770";
+      head.innerHTML="Join Green";
+      chose=1;
+      select="Green";
+    }
+    if(color.id == "col2"){
+      head.style.backgroundColor="#502CBF";
+      head.innerHTML="Join Violet";
+      chose=2;
+      select="Violet";
+    }
+    if(color.id == "col3"){
+    head.style.backgroundColor="#FF0808";
+    head.innerHTML="Join Red";
+    chose=3;
+    select="Red";
+    }
+    bet.style.visibility="visible";
+  }
+  function disappear(){
+    let bet = document.getElementById("bet");
+    bet.style.visibility="hidden";
+  }
+  
+  function generate(){
+    let max=132500;
+    let min=132380;
+    let rows=document.getElementById("table");
+    price=(Math.floor(Math.random()*(max-min))+min);
+    key=price%10;
+    if( key == 5 || key == 0){
+      col="#502CBF";
+      color="Violet";
+      double(2);
+      
+    }
+    else if((key % 2) == 0){
+      col="#FF0808";
+      color="Red";
+      double(3)
+      
+    }
+    else{
+      col="#41D770";
+      color="Green";
+      double(1);
+      
+    }
+   
+    //console.log(key)
+    rows.innerHTML=" <tr >  <td>20211107"+tip+"</td>"+
+    "<td>"+price+"</td><td style='color:"+col+"'>"+key+"</td> <td><div style"+"='background-color:"+col+"' id='result1'>"+
+       "</div></td> </tr"+rows.innerHTML;
+       tip++;
+  }
+function confirm(){
+  let beted=denom*value;
+  let amount=document.getElementById("amount");
+  amount.innerHTML=(Number(amount.innerHTML)-beted).toFixed(2);
+  let bet = document.getElementById("bet");
+  bet.style.visibility="hidden";
+  status=1;
+  d=new Date();
+  hour=d.getHours();
+  minute=d.getMinutes();
+}
+function double(selected){
+  let records=document.getElementById("records");
+  let beted=(denom*value).toFixed(2);
+  
+  if(chose == selected){
+  
+  let amount=document.getElementById("amount");
+  amount.innerHTML=(Number(amount.innerHTML)+
+  (2*beted)-share(beted)).toFixed(2);
+     
+  //console.log( (2*beted)-share(beted));
+  records.innerHTML="<p onclick='slide(this,1)'"+
+  ">20211107"+tip+" <span id='record' style='color:green'>Success +"+
+  ((2*(beted-share(beted))).toFixed(2))+"</span>"+
+"<i class='fas fa-chevron-down'></i>"
++"</p>"+
+  "<div class='details'>"+
+    "<h4 style='color:#0097A7'>Period Detail</h4>"+
+ "<p> <span class='ans'>Period</span>20211107"
+ +tip+"</p>"+
+  "<p><span class='ans'>Contract Money  </span>"
+  +denom+".00</p>"+
+   "<p><span class='ans'>Contract  Count</span>"
+   +value+"</p>"+
+   "<p> <span class='ans'>Delivery </span>"+
+   (beted-share(beted))+"</p>"+
+   "<p><span class='ans'>Fee</span>"+
+   (share(beted))+"</p>"+
+ "<p> <span class='ans'>Open Price </span>"+
+ price+"</p>"+
+ "<p>  <span class='ans'>Result</span>"+"<span style"+"='color:"+col+"'>"+
+   key+" "+color+"</span></p>"+
+ "<p>  <span class='ans'>selected</span><span style"
+ +"='color:"+col+"'>"+select+"</span>"+
+  "</p>"+
+  "<p>  <span class='ans'>Status</span><span style="+ "'color:green'>success</span></p>"+
+  "<p>  <span class='ans'>Amount</span>+"
+  +((2*(beted-share(beted))).toFixed(2))+"</p>"+
+   "<p> <span class='ans'>Create Time </span>"
+   +d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()+
+   "  "+hour+":"+minute+"</p></div>"
+ +records.innerHTML;
+  chose=-1;
+  status=0;
+  }
+  else{
+    if(status){
+   records.innerHTML="<p onclick='slide(this,1)'"+
+   ">20211107"+tip+" <span  id='record' style='color"+":red;'>Failure -"+
+      ((beted-share(beted)).toFixed(2))+"</span>"+
+    "<i class='fas fa-chevron-down'></i></p>"+
+    "<div class='details'>"+
+    "<h4 style='color:#0097A7'>Period Detail</h4>"+
+ "<p> <span class='ans'>Period</span>20211107"
+ +tip+"</p>"+
+  "<p><span class='ans'>Contract Money  </span>"
+  +denom+".00</p>"+
+   "<p><span class='ans'>Contract  Count</span>"
+   +value+"</p>"+
+   "<p> <span class='ans'>Delivery </span>"+
+   (beted-share(beted))+"</p>"+
+   "<p><span class='ans'>Fee</span>"+
+   (share(beted))+"</p>"+
+ "<p> <span class='ans'>Open Price </span>"+
+ price+"</p>"+
+ "<p>  <span class='ans'>Result</span>"+"<span style"+"='color:"+col+"'>"+
+   key+" "+color+"</span></p>"+
+   "<p>  <span class='ans'>select</span><span style="
+   +"'color:"+col+"'>"+select+"</span>"+
+   "</p>"+
+  "<p>  <span class='ans'>Status</span><span style"+
+  "='color:red'>Failure</span></p>"+
+  "<p>  <span class='ans'>Amount</span>+"
+  +((2*(beted-share(beted))).toFixed(2))+"</p>"+
+   "<p> <span class='ans'>Create Time </span>"
+   +d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()+
+   "  "+hour+":"+minute+ "</p></div>"
+    +records.innerHTML;
+    }
+    status=0;
+    chose=-1;
+  }
+  //console.log(records)
+}
+function share(bet){
+    return (0.02*bet);
+}
+function slide(panel,exist){
+    let details=panel.nextElementSibling;
+    console.log(panel);
+   rotate(panel,exist);
+    if(details.style.maxHeight){
+      details.style.maxHeight=null;
+    }
+    else{
+    details.style.maxHeight=details.scrollHeight+"px";
+    }
+}
+
+function rotate(panel1,exist){
+  console.log(panel1.childNodes);
+  if(exist == 0){
+   icon=panel1.childNodes[3];
+  }
+  else{
+    icon=panel1.childNodes[2];
+  }
+  if(!toggle){
+  icon.style.transform="rotateZ("+180+"deg)";
+  toggle=1;
+  }
+  else{
+    icon.style.transform="rotateZ("+0+"deg)";
+    toggle=0;
+  }
+}
+/* <p>2021373838 <span style='color:green;margin:10px'>Success +"+(2*beted)+"</span></p>*/
+
+/*let head=document.getElementsByClassName("head");
+  let i=0;
+  for(i=0;i<head.length;i++){
+    head[i].addEventListener("click",function (){
+      let panel=this.nextElementSibling;
+      if(panel.style.maxHeight){
+        panel.style.maxHeight=null;
+      }
+      else{
+        panel.style.maxHeight=panel.scrollHeight+"px";
+      }
+    });
+  }*/
+  </script>
+</body>
+
+</html>
